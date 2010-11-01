@@ -9,6 +9,8 @@ Additionally you can also get the reverse graph of 'what ns/packages dependUpon 
 
 The graph is available in many forms - Clojure map, .xml, .dot, .png
 
+Note: for images you need dot (http://www.graphviz.org/) added to your system path. To verify run 'dot -V' on command line.
+
 ![cdeps-0.0.1-ns-deps.png](examples/cdeps-0.0.1-ns-deps.png "Namespace dep graph for cdeps-0.0.1")
 
 Try it
