@@ -3,6 +3,10 @@ cdeps
 
 Generate namespace or package dependency graphs for Clojure source.
 
+The graph can be generated at various levels - complete src, single ns, single package.
+
+Additionally you can also get the reverse graph of 'what ns/packages dependUpon a ns/package'
+
 The graph is available in many forms - Clojure map, .xml, .dot, .png
 
 ![cdeps-0.0.1-ns-deps.png](examples/cdeps-0.0.1-ns-deps.png "Namespace dep graph for cdeps-0.0.1")

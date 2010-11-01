@@ -4,6 +4,9 @@
    It will give both java and clojure dependencies assuming Java classes being
    analogous to clojure namespaces. You can also generate an image of the graph generated.
    
+   The graph can be generated at various levels - complete src, single ns, single package.
+   Additionally you can also get the reverse graph of 'what ns/packages dependUpon a ns/package'
+
    There are broadly two ways of generating such a graph.
    1. One is loading up the entire project in the repl and viewing the dependencies
       at runtime.
