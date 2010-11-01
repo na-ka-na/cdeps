@@ -5,6 +5,8 @@ Generate namespace or package dependency graphs for Clojure source.
 
 The graph is available in many forms - Clojure map, .xml, .dot, .png
 
+![cdeps-0.0.1-ns-deps.png](examples/cdeps-0.0.1-ns-deps.png "Namespace dep graph for cdeps-0.0.1")
+
 Try it
 =======
 
