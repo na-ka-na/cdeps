@@ -1,0 +1,2 @@
+This is a tmp directory where .xml, .dot, .png files are generated.
+However all files are deleted on clean jvm exit.
