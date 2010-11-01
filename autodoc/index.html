@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <title>cdeps - Overview</title>
+    <link href="static/favicon.png" rel="icon" />
+    <link href="static/favicon.png" rel="shortcut icon" />
+    <link media="all" type="text/css" href="static/clojure.css" rel="stylesheet" />
+    <link media="all" type="text/css" href="static/wiki.css" rel="stylesheet" />
+    <link media="all" type="text/css" href="static/internal.css" rel="stylesheet" />
+    <!-- TODO: are we using these (from clojure.org)? If so, add the files -->
+    <script src="file/view/code_highlighter.js" type="text/javascript"></script>
+    <script src="file/view/clojure.js" type="text/javascript"></script>
+    <style>.menuWrapper{height: 36px;}</style>
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" href="http://www.wikispaces.com/_/2009051601/s/internal_ie.css" type="text/css" />
+    <![endif]-->
+  </head>
+<!--
+This document was auto-generated from the source by the clojure autodoc system.
+To report errors or ask questions about the overall documentation structure, formatting,
+etc., contact Tom Faulhaber (google mail name: tomfaulhaber).
+For errors in the documentation of a particular namespace, contact the author of that
+namespace.
+-->
+  <body>
+    <div id="AllContentContainer">
+      <div id="Header">
+	<a id="Logo" href="index.html"><img alt="Clojure" height="100" width="100" src="static/clojure-icon.gif" /></a>
+	<h1><a title="page header title" id="page-header" href="index.html">cdeps</a></h1>
+      </div>
+      <div id="leftcolumn"><div style="text-align: center;"></div>
+<div class="menu">
+  <div class="WikiCustomNav WikiElement wiki">
+    <a class="wiki_link" href="index.html">Overview</a><br />
+    <a class="wiki_link" href="api-index.html">API Index</a><br />
+    <a class="wiki_link" href="#">Namespaces:</a>
+    <ul id="left-sidebar-list">
+      <li><a href="cdeps-api.html" class="wiki_link">cdeps</a></li>
+    </ul>
+  </div>
+</div>
+</div>
+      <div id="rightcolumn">
+	<div id="Content">
+	  <div class="contentBox"><div class="innerContentBox">
+              <div id="content_view" class="wiki wikiPage">
+                <div id="right-sidebar"><div id="toc">
+  <h1 class="nopad">Table of Contents</h1>
+  <div style="margin-left: 1em;" class="toc-section">
+    <a href="#cdeps">cdeps</a>
+    
+    <br />
+  </div>
+</div>
+</div>
+                <div id="content-tag"><h1 id="toc0">An Overview of the <span id="header-project">cdeps</span> API</h1>
+<br />
+<div id="project-description">See your dependencies</div>
+<br />
+<div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="cdeps">cdeps</h2>
+  by <span id="author">unknown author</span><br />
+  <a href="cdeps-api.html" id="api-link">Detailed API documentation</a><br />
+  <pre id="namespace-docstr">Does a static analysis of clojure source, specifically the top level
+ns forms in .clj files and generates a dependency graph of namespaces (or packages).
+It will give both java and clojure dependencies assuming Java classes being
+analogous to clojure namespaces. You can also generate an image of the graph generated.
+
+There are broadly two ways of generating such a graph.
+1. One is loading up the entire project in the repl and viewing the dependencies
+   at runtime.
+2. Second way is doing a purely static analysis by parsing the top level ns forms
+   in the source.
+
+Note that the second method also has the pleasant side effect that one is forced
+to write only one ns form per clj file and that has to be at the top of the file.
+
+Typical usage would be:
+user=&gt; (def n (cdeps/get-ns-deps ".../some-project/src"))
+user=&gt; (def p (cdeps/get-package-deps ".../some-project/src"))
+user=&gt; (cdeps/show-deps-as-image n)
+user=&gt; (cdeps/show-deps-as-image p)
+
+Documentation is available via autodoc in the autodoc/ directory.
+
+Note: for images you need dot (<a href="http://www.graphviz.org/)">http://www.graphviz.org/)</a> added to your system path
+To verify run 'dot -V' on command line.
+See some sample images in the examples/ directory
+</pre>
+  
+  Public variables and functions:
+  <span id="var-link"><a href="cdeps-api.html#cdeps/convert-deps-to-xml" id="var-tag">convert-deps-to-xml</a> </span><span id="var-link"><a href="cdeps-api.html#cdeps/gen-dot!" id="var-tag">gen-dot!</a> </span><span id="var-link"><a href="cdeps-api.html#cdeps/gen-image!" id="var-tag">gen-image!</a> </span><span id="var-link"><a href="cdeps-api.html#cdeps/gen-xml!" id="var-tag">gen-xml!</a> </span><span id="var-link"><a href="cdeps-api.html#cdeps/get-ns-deps" id="var-tag">get-ns-deps</a> </span><span id="var-link"><a href="cdeps-api.html#cdeps/get-ns-deps-for-dependsUpon-one-ns" id="var-tag">get-ns-deps-for-dependsUpon-one-ns</a> </span><span id="var-link"><a href="cdeps-api.html#cdeps/get-ns-deps-for-dependsUpon-one-package" id="var-tag">get-ns-deps-for-dependsUpon-one-package</a> </span><span id="var-link"><a href="cdeps-api.html#cdeps/get-ns-deps-for-one-ns" id="var-tag">get-ns-deps-for-one-ns</a> </span><span id="var-link"><a href="cdeps-api.html#cdeps/get-ns-deps-for-one-ns-both-ways" id="var-tag">get-ns-deps-for-one-ns-both-ways</a> </span><span id="var-link"><a href="cdeps-api.html#cdeps/get-ns-deps-for-one-package" id="var-tag">get-ns-deps-for-one-package</a> </span><span id="var-link"><a href="cdeps-api.html#cdeps/get-ns-deps-for-one-package-both-ways" id="var-tag">get-ns-deps-for-one-package-both-ways</a> </span><span id="var-link"><a href="cdeps-api.html#cdeps/get-package-deps" id="var-tag">get-package-deps</a> </span><span id="var-link"><a href="cdeps-api.html#cdeps/show-deps-as-image" id="var-tag">show-deps-as-image</a> </span><span id="var-link"><a href="cdeps-api.html#cdeps/show-image!" id="var-tag">show-image!</a> </span><br />
+  
+</div>
+</div>
+              </div>
+            </div>
+          </div>
+	</div>
+	<div id="foot">
+	  <div style="text-align: center;" id="copyright">No copyright info </div>
+	</div>
+      </div>
+      <div id="DesignedBy">Logo &amp; site design by <a title="Visit Tom Hickey's website." href="http://www.tomhickey.com">Tom Hickey</a>.<br />
+      Clojure auto-documentation system by Tom Faulhaber.</div>
+    </div>
+    <!-- /AllContentContainer -->
+  </body>
+
+</html>
