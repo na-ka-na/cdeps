@@ -26,6 +26,17 @@ To begin clone the repo. Then generate libs and run the repl:
 	nil
 	user=> (def n (cdeps/get-ns-deps "../compojure/src"))
 	#'user/n
+    user=> (pprint n)
+    {"compojure.core"
+      ("clojure.contrib.def"  "ring.middleware.params"
+       "ring.middleware.cookies" "clout.core"
+       "compojure.response"),
+     "compojure.response"
+      ("ring.util.response" "java.io.File" "java.io.InputStream"
+       "clojure.lang.APersistentMap" "clojure.lang.IDeref"
+       "clojure.lang.IFn" "clojure.lang.ISeq"),
+     "compojure.route"
+      ("compojure.core" "ring.util.response" "ring.util.codec")}
 	user=> (cdeps/show-deps-as-image n)
 	Generating xml file tmp/deps736822425291793699.xml ...
 	Generating dot file tmp/deps5214394967951933127.dot ...
